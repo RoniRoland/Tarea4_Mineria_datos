@@ -13,6 +13,7 @@ cluster <- kmeans(data_fp, centers = 3)
 
 ggplot(data_fp, aes(x = VIC_EDAD, y = AGR_EDAD, color =as.factor(cluster$cluster)))+
   geom_point()+
-  geom_point(data = as.data.frame(cluster$centers), aes(x = VIC_ESCOLARIDAD, y = VIC_EDAD), color="black", size=4, shape=17)+
+  geom_point(data = as.data.frame(cluster$centers), aes(x = VIC_EDAD, y = AGR_EDAD), color="black", size=4, shape=17)+
   labs(title = "Relación entre Edad de la Víctima y del Agresor") +
   theme_minimal()
+
